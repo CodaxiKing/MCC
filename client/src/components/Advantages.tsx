@@ -30,16 +30,16 @@ export default function Advantages() {
   ];
 
   return (
-    <section id="advantages" className="py-24 bg-purple-700 relative overflow-hidden" data-testid="section-advantages">
+    <section id="advantages" className="py-24 bg-[#FFC107] relative overflow-hidden" data-testid="section-advantages">
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase mb-8 text-white"
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase mb-8 text-gray-900"
             data-testid="text-advantages-title"
           >
             Por que escolher a
             <br />
-            <span className="text-[#FFC107]">MCC Hosting?</span>
+            <span className="text-white">MCC Hosting?</span>
           </h2>
         </div>
 
