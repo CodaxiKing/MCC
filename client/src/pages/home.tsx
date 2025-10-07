@@ -24,7 +24,7 @@ export default function Home() {
       <Stats />
 
       <div className="relative">
-        <WaveDivider color="#5C6BC0" variant="wave1" />
+        <WaveDivider color="#9333ea" variant="wave1" />
       </div>
 
       <Infrastructure />

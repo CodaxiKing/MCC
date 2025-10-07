@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Sparkles, Zap, Shield } from "lucide-react";
+import { Sparkles, Zap, Shield, Server, Cloud, Cpu, Database, Lock } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -17,9 +17,65 @@ export default function Hero() {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/25 rounded-full blur-3xl animate-pulse delay-700" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-400/15 rounded-full blur-3xl animate-pulse delay-1000" />
 
+      {/* Floating Cards - Lado Esquerdo */}
+      <div className="absolute top-[15%] left-[5%] animate-float-slow">
+        <div className="relative group">
+          <div className="absolute inset-0 bg-purple-600 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity" />
+          <div className="relative bg-gradient-to-br from-purple-500/40 to-purple-700/40 backdrop-blur-md p-6 rounded-3xl border border-purple-400/30 shadow-2xl">
+            <Cloud className="w-12 h-12 text-white" />
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute top-[45%] left-[8%] animate-float-medium" style={{ animationDelay: '1s' }}>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-purple-600 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity" />
+          <div className="relative bg-gradient-to-br from-purple-500/40 to-purple-700/40 backdrop-blur-md p-5 rounded-2xl border border-purple-400/30 shadow-2xl">
+            <Database className="w-10 h-10 text-white" />
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute top-[75%] left-[6%] animate-float-slow" style={{ animationDelay: '2s' }}>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-purple-600 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity" />
+          <div className="relative bg-gradient-to-br from-purple-500/40 to-purple-700/40 backdrop-blur-md p-4 rounded-2xl border border-purple-400/30 shadow-2xl">
+            <Zap className="w-8 h-8 text-white" />
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Cards - Lado Direito */}
+      <div className="absolute top-[20%] right-[6%] animate-float-medium" style={{ animationDelay: '0.5s' }}>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-purple-600 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity" />
+          <div className="relative bg-gradient-to-br from-purple-500/40 to-purple-700/40 backdrop-blur-md p-6 rounded-3xl border border-purple-400/30 shadow-2xl">
+            <Server className="w-12 h-12 text-white" />
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute top-[50%] right-[8%] animate-float-slow" style={{ animationDelay: '1.5s' }}>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-purple-600 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity" />
+          <div className="relative bg-gradient-to-br from-purple-500/40 to-purple-700/40 backdrop-blur-md p-5 rounded-2xl border border-purple-400/30 shadow-2xl">
+            <Cpu className="w-10 h-10 text-white" />
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute top-[78%] right-[5%] animate-float-medium" style={{ animationDelay: '0.8s' }}>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-purple-600 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity" />
+          <div className="relative bg-gradient-to-br from-purple-500/40 to-purple-700/40 backdrop-blur-md p-4 rounded-2xl border border-purple-400/30 shadow-2xl">
+            <Shield className="w-8 h-8 text-white" />
+          </div>
+        </div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center py-20">
         {/* Badge de destaque */}
-        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-bounce-slow">
+        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mt-8 mb-8 animate-bounce-slow">
           <Sparkles className="w-5 h-5 text-yellow-300" />
           <span className="text-white font-bold text-sm md:text-base">
             🎮 Servidores de Alto Desempenho • Proteção Total • Suporte 24/7
@@ -38,11 +94,10 @@ export default function Hero() {
         </h1>
 
         <p
-          className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto mb-12 leading-relaxed font-semibold drop-shadow-lg"
+          className="text-lg md:text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto mb-12 leading-relaxed font-semibold drop-shadow-lg"
           data-testid="text-hero-subtitle"
         >
-          Servidores Minecraft e VPS de alta performance com proteção DDoS de ponta e ativação
-          imediata. Crie, jogue e conquiste sem limites.
+          Servidores Minecraft e VPS de alta performance com proteção DDoS e ativação instantânea.
         </p>
 
         {/* Features destacados */}
@@ -52,7 +107,7 @@ export default function Hero() {
             <span className="text-white font-semibold text-sm md:text-base">Ativação Instantânea</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm">
-            <Shield className="w-5 h-5 text-cyan-300" />
+            <Shield className="w-5 h-5 text-purple-300" />
             <span className="text-white font-semibold text-sm md:text-base">DDoS Protection</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm">

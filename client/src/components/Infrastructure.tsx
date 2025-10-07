@@ -21,7 +21,7 @@ export default function Infrastructure() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-indigo-700 via-indigo-600 to-purple-700 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-purple-600 via-indigo-700 to-purple-800 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-1/4 w-96 h-96 bg-pink-500/25 rounded-full blur-3xl animate-pulse" />
@@ -32,46 +32,12 @@ export default function Infrastructure() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Illustration */}
           <div className="relative">
-            <div className="relative z-10">
-              {/* Server illustration using CSS */}
-              <div className="relative w-full max-w-md mx-auto">
-                {/* Laptops */}
-                <div className="absolute top-0 left-0 w-48 h-32 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg transform -rotate-12 shadow-2xl border-4 border-purple-400/30">
-                  <div className="absolute top-3 left-3 right-3 h-16 bg-gradient-to-br from-purple-900 to-black rounded overflow-hidden">
-                    <div className="flex flex-col gap-1 p-2">
-                      <div className="h-1 bg-cyan-400 w-3/4"></div>
-                      <div className="h-1 bg-purple-400 w-1/2"></div>
-                      <div className="h-1 bg-pink-400 w-2/3"></div>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-4 bg-gray-800"></div>
-                </div>
-
-                <div className="absolute top-0 right-0 w-48 h-32 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg transform rotate-12 shadow-2xl border-4 border-purple-400/30">
-                  <div className="absolute top-3 left-3 right-3 h-16 bg-gradient-to-br from-purple-900 to-black rounded overflow-hidden">
-                    <div className="flex flex-col gap-1 p-2">
-                      <div className="h-1 bg-cyan-400 w-2/3"></div>
-                      <div className="h-1 bg-purple-400 w-3/4"></div>
-                      <div className="h-1 bg-pink-400 w-1/2"></div>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-4 bg-gray-800"></div>
-                </div>
-
-                {/* Central server/processor */}
-                <div className="relative mt-24 mx-auto w-64 h-64">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-900 rounded-3xl transform rotate-45 shadow-2xl">
-                    <div className="absolute inset-8 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl flex items-center justify-center">
-                      <div className="text-white text-6xl font-black transform -rotate-45">5G</div>
-                    </div>
-                  </div>
-                  {/* RAM sticks */}
-                  <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-3 h-32 bg-gradient-to-b from-green-400 to-green-600 rounded-full shadow-lg"></div>
-                  <div className="absolute -left-8 top-1/2 -translate-y-1/2 w-3 h-32 bg-gradient-to-b from-green-400 to-green-600 rounded-full shadow-lg"></div>
-                  <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-3 h-32 bg-gradient-to-b from-green-400 to-green-600 rounded-full shadow-lg"></div>
-                  <div className="absolute -right-8 top-1/2 -translate-y-1/2 w-3 h-32 bg-gradient-to-b from-green-400 to-green-600 rounded-full shadow-lg"></div>
-                </div>
-              </div>
+            <div className="relative z-10 flex items-center justify-center">
+              <img 
+                src="/attached_assets/minecraft-hero.png" 
+                alt="Minecraft Hero" 
+                className="w-full max-w-lg mx-auto drop-shadow-2xl animate-bounce-slow"
+              />
             </div>
           </div>
 
