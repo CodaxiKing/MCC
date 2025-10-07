@@ -7,11 +7,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Server, HelpCircle, FileText } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
+  const [servicosOpen, setServicosOpen] = useState(false);
+  const [ajudaOpen, setAjudaOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,14 +65,30 @@ export default function Navbar() {
               </span>
             </Link>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-black hover:text-[#FFC107] transition-colors font-bold uppercase text-sm outline-none">
+            <DropdownMenu open={servicosOpen} onOpenChange={setServicosOpen}>
+              <DropdownMenuTrigger 
+                className="flex items-center gap-1 text-black hover:text-[#FFC107] transition-colors font-bold uppercase text-sm outline-none"
+                onMouseEnter={() => setServicosOpen(true)}
+                onMouseLeave={() => setServicosOpen(false)}
+              >
                 Serviços <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent 
+                className="bg-black/95 backdrop-blur-sm border-gray-800 p-2 w-72"
+                onMouseEnter={() => setServicosOpen(true)}
+                onMouseLeave={() => setServicosOpen(false)}
+              >
                 <Link href="/vps">
-                  <DropdownMenuItem className="cursor-pointer">
-                    VPS
+                  <DropdownMenuItem className="cursor-pointer p-4 rounded-lg hover:bg-white/10 transition-all group">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <Server className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white font-bold text-base mb-1">VPS</h4>
+                        <p className="text-gray-400 text-sm">Servidores virtuais para projetos flexíveis.</p>
+                      </div>
+                    </div>
                   </DropdownMenuItem>
                 </Link>
               </DropdownMenuContent>
@@ -87,19 +105,43 @@ export default function Navbar() {
               </span>
             </Link>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-black hover:text-[#FFC107] transition-colors font-bold uppercase text-sm outline-none">
+            <DropdownMenu open={ajudaOpen} onOpenChange={setAjudaOpen}>
+              <DropdownMenuTrigger 
+                className="flex items-center gap-1 text-black hover:text-[#FFC107] transition-colors font-bold uppercase text-sm outline-none"
+                onMouseEnter={() => setAjudaOpen(true)}
+                onMouseLeave={() => setAjudaOpen(false)}
+              >
                 Ajuda <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent 
+                className="bg-black/95 backdrop-blur-sm border-gray-800 p-2 w-72"
+                onMouseEnter={() => setAjudaOpen(true)}
+                onMouseLeave={() => setAjudaOpen(false)}
+              >
                 <Link href="/ajuda">
-                  <DropdownMenuItem className="cursor-pointer">
-                    Central de Ajuda
+                  <DropdownMenuItem className="cursor-pointer p-4 rounded-lg hover:bg-white/10 transition-all group mb-1">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <HelpCircle className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white font-bold text-base mb-1">Central de Ajuda</h4>
+                        <p className="text-gray-400 text-sm">Encontre respostas para suas dúvidas.</p>
+                      </div>
+                    </div>
                   </DropdownMenuItem>
                 </Link>
                 <Link href="/status">
-                  <DropdownMenuItem className="cursor-pointer">
-                    Status da Host
+                  <DropdownMenuItem className="cursor-pointer p-4 rounded-lg hover:bg-white/10 transition-all group">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <FileText className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white font-bold text-base mb-1">Status da Host</h4>
+                        <p className="text-gray-400 text-sm">Verifique o status dos serviços.</p>
+                      </div>
+                    </div>
                   </DropdownMenuItem>
                 </Link>
               </DropdownMenuContent>

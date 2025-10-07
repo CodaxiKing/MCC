@@ -18,16 +18,34 @@ export default function ParceirosPage() {
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
-          {/* Grid de Parceiros - Topo */}
-          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-4 mb-20">
-            {partnerLogos.slice(0, 20).map((partner) => (
-              <div
-                key={partner.id}
-                className="aspect-square bg-white rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 flex items-center justify-center"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full" />
-              </div>
-            ))}
+          {/* Carrossel de Parceiros - Topo (para direita) */}
+          <div className="relative mb-20 overflow-hidden">
+            <style>{`
+              @keyframes scrollRight {
+                0% {
+                  transform: translateX(-50%);
+                }
+                100% {
+                  transform: translateX(0%);
+                }
+              }
+              .animate-scroll-right {
+                animation: scrollRight 20s linear infinite;
+              }
+              .animate-scroll-right:hover {
+                animation-play-state: paused;
+              }
+            `}</style>
+            <div className="flex gap-4 animate-scroll-right">
+              {[...partnerLogos, ...partnerLogos].map((partner, index) => (
+                <div
+                  key={`top-${index}`}
+                  className="flex-shrink-0 w-24 h-24 bg-white rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 flex items-center justify-center"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full" />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Seção Principal */}
@@ -46,16 +64,34 @@ export default function ParceirosPage() {
             </Button>
           </div>
 
-          {/* Grid de Parceiros - Meio */}
-          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-4 mb-20">
-            {partnerLogos.slice(0, 30).map((partner) => (
-              <div
-                key={`mid-${partner.id}`}
-                className="aspect-square bg-white rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 flex items-center justify-center"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full" />
-              </div>
-            ))}
+          {/* Carrossel de Parceiros - Meio (para esquerda) */}
+          <div className="relative mb-20 overflow-hidden">
+            <style>{`
+              @keyframes scrollLeft {
+                0% {
+                  transform: translateX(0%);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+              .animate-scroll-left {
+                animation: scrollLeft 20s linear infinite;
+              }
+              .animate-scroll-left:hover {
+                animation-play-state: paused;
+              }
+            `}</style>
+            <div className="flex gap-4 animate-scroll-left">
+              {[...partnerLogos, ...partnerLogos].map((partner, index) => (
+                <div
+                  key={`mid-${index}`}
+                  className="flex-shrink-0 w-24 h-24 bg-white rounded-lg shadow-md hover:shadow-xl transition-all hover:scale-105 flex items-center justify-center"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full" />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Seção de Destaque */}

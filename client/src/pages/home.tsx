@@ -12,6 +12,7 @@ export default function Home() {
         <Hero />
         <WaveDivider color="rgb(126 34 206)" variant="wave1" />
       </div>
+      
       <div className="relative">
         <Advantages />
         <WaveDivider color="#1e293b" variant="wave2" />
