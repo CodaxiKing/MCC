@@ -1,31 +1,21 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import MinecraftHosting from "@/components/MinecraftHosting";
-import VPSHosting from "@/components/VPSHosting";
 import Advantages from "@/components/Advantages";
 import Footer from "@/components/Footer";
+import WaveDivider from "@/components/WaveDivider";
 
 export default function Home() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
-      <Navbar onNavigate={scrollToSection} />
-      <Hero onCTAClick={() => scrollToSection("minecraft")} />
-      <MinecraftHosting />
-      <VPSHosting />
-      <Advantages />
+      <Navbar />
+      <div className="relative">
+        <Hero />
+        <WaveDivider color="rgb(126 34 206)" variant="wave1" />
+      </div>
+      <div className="relative">
+        <Advantages />
+        <WaveDivider color="#1e293b" variant="wave2" />
+      </div>
       <Footer />
     </div>
   );

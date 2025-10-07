@@ -1,10 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
-interface HeroProps {
-  onCTAClick?: () => void;
-}
-
-export default function Hero({ onCTAClick }: HeroProps) {
+export default function Hero() {
   return (
     <section
       id="hero"
@@ -32,18 +29,25 @@ export default function Hero({ onCTAClick }: HeroProps) {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <Button
-            size="lg"
-            onClick={onCTAClick}
-            className="bg-[#FFC107] hover:bg-[#FFD54F] text-black font-black text-lg px-12 py-6 h-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-none"
-            data-testid="button-ver-planos"
-          >
-            VER PLANOS
-          </Button>
+          <Link href="/minecraft">
+            <Button
+              size="lg"
+              className="bg-[#FFC107] hover:bg-[#FFD54F] text-black font-black text-lg px-12 py-6 h-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-none"
+              data-testid="button-ver-planos"
+            >
+              VER PLANOS
+            </Button>
+          </Link>
           <Button
             size="lg"
             className="bg-blue-600 hover:bg-blue-700 text-white font-black text-lg px-12 py-6 h-auto shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             data-testid="button-saiba-mais"
+            onClick={() => {
+              const element = document.getElementById("advantages");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             SAIBA MAIS
           </Button>
